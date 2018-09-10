@@ -90,7 +90,11 @@ img {
   font-size:.9em;
   color: $lightgray;
   line-height: 1.5em;
-  margin: 40px 0;
+  margin: 40px 10px;
+}
+
+::-webkit-scrollbar {
+    display:none;
 }
 
 
