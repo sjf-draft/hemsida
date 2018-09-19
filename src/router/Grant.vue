@@ -9,7 +9,8 @@
         <h1>{{D.header_1}}</h1>
         <h2>{{D.sub_header_1}}</h2>
         <p>{{D.paragraph_1}}</p>
-        <a @click="saveFile()" class="pdf">Riktlinjer för ansökan om bidrag​</a>
+        <a href="https://res.cloudinary.com/dpehzqvvx/image/upload/v1536222545/sjf/SJF_riktlinjer_2010.pdf"
+        target="_blank" rel="noopener noreferrer" class="pdf">Riktlinjer för ansökan om bidrag​</a>
         <a href="#" target="_blank" rel="noopener noreferrer" class="award-force">Sök bidrag online samt redovisning</a>
       </div>
     </section>
@@ -45,13 +46,13 @@ import MobileNav from '@/components/MobileNav';
 import Hero from '@/components/Hero';
 
 import { storyblok } from '@/mixins/storyblok';
-import { base64str } from '@/mixins/base64str';
+// import { base64str } from '@/mixins/base64str';
 
 
 
 export default {
   components: { Nav, MobileNav, Hero },
-  mixins: [storyblok, base64str],
+  mixins: [storyblok],
   components: { Nav, MobileNav, Hero },
   data () {
     return {
@@ -59,22 +60,22 @@ export default {
     }
   },
   methods: {
-    saveFile() {
-      // base64 string
-      var base64str = this.base64str;
+    // saveFile() {
+    //   // base64 string
+    //   var base64str = this.base64str;
 
-      // decode base64 string, remove space for IE compatibility
-      var binary = atob(base64str.replace(/\s/g, ''));
-      var len = binary.length;
-      var buffer = new ArrayBuffer(len);
-      var view = new Uint8Array(buffer);
-      for (var i = 0; i < len; i++) {
-          view[i] = binary.charCodeAt(i);
-      }
+    //   // decode base64 string, remove space for IE compatibility
+    //   var binary = atob(base64str.replace(/\s/g, ''));
+    //   var len = binary.length;
+    //   var buffer = new ArrayBuffer(len);
+    //   var view = new Uint8Array(buffer);
+    //   for (var i = 0; i < len; i++) {
+    //       view[i] = binary.charCodeAt(i);
+    //   }
 
-      const blob = new Blob([view], {type: "data:application/pdf;base64,"});
-      FileSaver.saveAs(blob, "SJF_riktlinjer_2010.pdf");
-    }
+    //   const blob = new Blob([view], {type: "data:application/pdf;base64,"});
+    //   FileSaver.saveAs(blob, "SJF_riktlinjer_2010.pdf");
+    // }
   },
   asyncComputed: {
     D() {

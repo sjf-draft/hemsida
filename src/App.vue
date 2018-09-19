@@ -29,6 +29,9 @@ a {
 
 body {
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 *,
@@ -43,6 +46,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  text-rendering: optimizeLegibility;
   
 }
 
@@ -77,7 +81,7 @@ img {
 }
 
 .container {
-  padding: 10px;
+  padding: 20px 10px;
   text-align: left;
 }
 .background {
@@ -88,7 +92,7 @@ img {
 .copyright {
   display: inline-block;
   font-size:.9em;
-  color: $lightgray;
+  color: $lightdark;
   line-height: 1.5em;
   margin: 40px 10px;
 }
@@ -102,7 +106,7 @@ img {
 
    h1, h2, p, h3, #map {
     text-align: left;
-    max-width: 600px;
+    max-width: 800px;
     margin-left:30px;
   } 
 
@@ -125,157 +129,186 @@ img {
 
 }
 
+@include respond-above(md) {
+    p {
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+}
 
 @include respond-above(xs) {
   .content {
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
   }
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-ExtraLightItalic.eot');
-    src: local('Source Sans Pro ExtraLight Italic'), local('./assets/fonts/./assets/fonts/SourceSansPro-ExtraLightItalic'),
-        url('./assets/fonts/SourceSansPro-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-ExtraLightItalic.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-ExtraLightItalic.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-ExtraLightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-Italic.eot');
-    src: local('Source Sans Pro Italic'), local('./assets/fonts/SourceSansPro-Italic'),
-        url('./assets/fonts/SourceSansPro-Italic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-Italic.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-Italic.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-ExtraLight.eot');
-    src: local('Source Sans Pro ExtraLight'), local('./assets/fonts/SourceSansPro-ExtraLight'),
-        url('./assets/fonts/SourceSansPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-ExtraLight.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-ExtraLight.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-ExtraLight.ttf') format('truetype');
+    src: url('./assets/fonts/hinted-SourceSansPro-ExtraLight.eot');
+    src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLight.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLight.svg#SourceSansPro-ExtraLight') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLight.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLight.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-BoldItalic.eot');
-    src: local('Source Sans Pro Bold Italic'), local('./assets/fonts/SourceSansPro-BoldItalic'),
-        url('./assets/fonts/SourceSansPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-BoldItalic.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-BoldItalic.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
+    src: url('./assets/fonts/hinted-SourceSansPro-ExtraLightItalic.eot');
+    src: local('Source Sans Pro ExtraLight Italic'), local('SourceSansPro-ExtraLightItalic'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLightItalic.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLightItalic.svg#SourceSansPro-ExtraLightItalic') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLightItalic.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-ExtraLightItalic.ttf') format('truetype');
+        
+    font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-Bold.eot');
-    src: local('Source Sans Pro Bold'), local('./assets/fonts/SourceSansPro-Bold'),
-        url('./assets/fonts/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-Bold.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-Bold.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-Black.eot');
-    src: local('Source Sans Pro Black'), local('./assets/fonts/SourceSansPro-Black'),
-        url('./assets/fonts/SourceSansPro-Black.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-Black.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-Black.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-Black.ttf') format('truetype');
+    src: url('./assets/fonts/hinted-SourceSansPro-Black.eot');
+    src: local('Source Sans Pro Black'), local('SourceSansPro-Black'),
+        url('./assets/fonts/hinted-SourceSansPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-Black.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-Black.svg#SourceSansPro-Black') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-Black.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-Black.ttf') format('truetype');
+        
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-BlackItalic.eot');
-    src: local('Source Sans Pro Black Italic'), local('./assets/fonts/SourceSansPro-BlackItalic'),
-        url('./assets/fonts/SourceSansPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-BlackItalic.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-BlackItalic.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-BlackItalic.ttf') format('truetype');
+    src: url('./assets/fonts/hinted-SourceSansPro-BoldItalic.eot');
+    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'),
+        url('./assets/fonts/hinted-SourceSansPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-BoldItalic.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-BoldItalic.svg#SourceSansPro-BoldItalic') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-BoldItalic.woff') format('woff')
+        url('./assets/fonts/hinted-SourceSansPro-BoldItalic.ttf') format('truetype');
+        
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-LightItalic.eot');
+    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'),
+        url('./assets/fonts/hinted-SourceSansPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-LightItalic.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-LightItalic.svg#SourceSansPro-LightItalic') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-LightItalic.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-Italic.eot');
+    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'),
+        url('./assets/fonts/hinted-SourceSansPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-Italic.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-Italic.svg#SourceSansPro-Italic') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-Italic.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-BlackItalic.eot');
+    src: local('Source Sans Pro Black Italic'), local('SourceSansPro-BlackItalic'),
+        url('./assets/fonts/hinted-SourceSansPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-BlackItalic.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-BlackItalic.svg#SourceSansPro-BlackItalic') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-BlackItalic.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-BlackItalic.ttf') format('truetype');
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-Light.eot');
-    src: local('Source Sans Pro Light'), local('./assets/fonts/SourceSansPro-Light'),
-        url('./assets/fonts/SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-Light.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-Light.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-SemiBold.eot');
-    src: local('Source Sans Pro SemiBold'), local('./assets/fonts/SourceSansPro-SemiBold'),
-        url('./assets/fonts/SourceSansPro-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-SemiBold.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-SemiBold.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-LightItalic.eot');
-    src: local('Source Sans Pro Light Italic'), local('./assets/fonts/SourceSansPro-LightItalic'),
-        url('./assets/fonts/SourceSansPro-LightItalic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-LightItalic.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-LightItalic.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-SemiBoldItalic.eot');
-    src: local('Source Sans Pro SemiBold Italic'), local('./assets/fonts/SourceSansPro-SemiBoldItalic'),
-        url('./assets/fonts/SourceSansPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-SemiBoldItalic.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-SemiBoldItalic.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-SemiBoldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-Regular.eot');
-    src: local('Source Sans Pro Regular'), local('./assets/fonts/SourceSansPro-Regular'),
-        url('./assets/fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/SourceSansPro-Regular.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-Regular.woff') format('woff'),
-        url('./assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+    src: url('./assets/fonts/hinted-SourceSansPro-Regular.eot');
+    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+        url('./assets/fonts/hinted-SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-Regular.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-Regular.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-SemiBoldItalic.eot');
+    src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBoldItalic.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBoldItalic.svg#SourceSansPro-SemiBoldItalic') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBoldItalic.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-SemiBold.eot');
+    src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBold.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBold.svg#SourceSansPro-SemiBold') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBold.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-Bold.eot');
+    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+        url('./assets/fonts/hinted-SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-Bold.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-Bold.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/hinted-SourceSansPro-Light.eot');
+    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'),
+        url('./assets/fonts/hinted-SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/hinted-SourceSansPro-Light.woff2') format('woff2'),
+        url('./assets/fonts/hinted-SourceSansPro-Light.svg#SourceSansPro-Light') format('svg'),
+        url('./assets/fonts/hinted-SourceSansPro-Light.woff') format('woff'),
+        url('./assets/fonts/hinted-SourceSansPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
 
 
 

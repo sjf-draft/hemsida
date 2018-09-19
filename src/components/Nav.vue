@@ -34,7 +34,7 @@ ul {
 }
 
 .router-link {
-  font-size: 1.2em;
+  font-size: 1.35em;
   color: $white;
   font-weight: 400;
   padding: 1em;

@@ -78,7 +78,7 @@ export default {
   display: inline-block;
   max-width: 180px;
   text-align: left;
-  margin: 30px;
+  margin: 50px 50px 50px 30px;
 }
 
 .person > span {
@@ -111,17 +111,7 @@ export default {
 
 }
 
-@media (min-width: 440px) {
-  .person {
-    margin-left:30px;
-  }
 
-
-  .outside {
-    margin-left: 30px;
-  }
-
-}
 
 
 

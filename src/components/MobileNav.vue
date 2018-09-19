@@ -7,15 +7,21 @@
         <li @click="eventHandler()"><router-link class="router-link" to="/kontakt">Kontakt</router-link></li>
       </ul>
       
-      <button 
+      <button
         @click="eventHandler()"
         class="hamburger hamburger--spring"
         :class="{ 'is-active': isActive }"
         type="button" 
-        aria-label="Menu" 
-        aria-controls="navigation">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
+        aria-label="navigation" 
+        >
+        <span 
+          class="hamburger-box" 
+          aria-label="navigation"
+         >
+          <span 
+            class="hamburger-inner" 
+            aria-label="navigation" 
+            ></span>
         </span>
       </button>
     </nav>
